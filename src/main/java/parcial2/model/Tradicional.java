@@ -3,7 +3,7 @@ package parcial2.model;
     public class Tradicional extends Sala {
 
         public Tradicional(int codigoSala, int capacidadMaximaEspectadores) {
-            super(codigoSala, nombre, capacidadMaximaEspectadores);
+            super(codigoSala, "Sala Tradicional " + codigoSala, capacidadMaximaEspectadores);
         }
 
         @Override

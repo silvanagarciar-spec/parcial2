@@ -18,7 +18,7 @@ public class FuncionCinematografica {
      * @param pelicula
      * @param sala
      */
-    public FuncionCinematografica(String codigoFuncionCinematografica, String fechaPresentacion, String horaInicio, double precioBaseBoleta, Pelicula pelicula, Sala sala) {
+    public FuncionCinematografica(int codigoFuncionCinematografica, String fechaPresentacion, String horaInicio, double precioBaseBoleta, Pelicula pelicula, Sala sala) {
         this.codigoFuncionCinematografica = codigoFuncionCinematografica;
         this.fechaPresentacion = fechaPresentacion;
         this.horaInicio = horaInicio;

@@ -22,7 +22,10 @@ public class Boleta {
     }
 
     public Boleta(String codigoBoleta, FuncionCinematografica funcion, int numeroSilla) {
-
+        this.codigoBoleta = Integer.parseInt(codigoBoleta);
+        this.fila = 0; // el menu no pide la fila
+        this.numeroAsiento = numeroSilla;
+        this.valorIndividualPagado = funcion.getSala().calcularPrecioBoleta(funcion.getPrecioBaseBoleta());
     }
     public double calcularValorFinal() {
         return this.valorIndividualPagado;

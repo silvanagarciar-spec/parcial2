@@ -3,7 +3,7 @@ package parcial2.model;
 public class Vip extends Sala {
 
     public Vip(int codigoSala, int capacidadMaximaEspectadores) {
-        super(codigoSala, nombre, capacidadMaximaEspectadores);
+        super(codigoSala, "Sala VIP " + codigoSala, capacidadMaximaEspectadores);
     }
 
     @Override

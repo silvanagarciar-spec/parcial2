@@ -3,7 +3,7 @@ package parcial2.model;
 public class TresD extends Sala {
 
     public TresD(int codigoSala, int capacidadMaximaEspectadores) {
-        super(codigoSala, nombre, capacidadMaximaEspectadores);
+        super(codigoSala, "Sala 3D " + codigoSala, capacidadMaximaEspectadores);
     }
 
     @Override

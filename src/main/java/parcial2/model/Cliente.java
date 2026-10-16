@@ -14,7 +14,7 @@ public class Cliente extends Persona {
      * @param codigoAfiliacion
      * @param porcentajeDescuento
      */
-    public Cliente(String documentoIdentidad, String nombreCompleto, String correoElectronico, String numeroTelefono, String codigoAfiliacion, double porcentajeDescuento) {
+    public Cliente(String documentoIdentidad, String nombreCompleto, String correoElectronico, String numeroTelefono, int codigoAfiliacion, double porcentajeDescuento) {
         super(documentoIdentidad, nombreCompleto, correoElectronico, numeroTelefono);
         this.codigoAfiliacion = codigoAfiliacion;
         this.porcentajeDescuento = porcentajeDescuento;

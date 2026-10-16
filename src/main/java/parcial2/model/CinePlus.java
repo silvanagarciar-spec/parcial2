@@ -53,7 +53,15 @@ public class CinePlus {
         if (buscarPelicula(codigo) != null) {
             return "La película ya se encuentra registrada.";
         }
-        Pelicula pelicula = new Pelicula(codigo, titulo, duracion, genero, clasificacion);
+        GeneroCinematografico generoEnum = GeneroCinematografico.desdeTexto(genero);
+        if (generoEnum == null) {
+            return "El género ingresado no es válido.";
+        }
+        ClasificacionEdad clasificacionEnum = ClasificacionEdad.desdeTexto(clasificacion);
+        if (clasificacionEnum == null) {
+            return "La clasificación ingresada no es válida.";
+        }
+        Pelicula pelicula = new Pelicula(codigo, titulo, duracion, generoEnum, clasificacionEnum);
         listaPeliculas.add(pelicula);
         return "Película registrada con éxito.";
     }
@@ -106,14 +114,27 @@ public class CinePlus {
         if (buscarCliente(documento) != null) {
             return "El cliente ya se encuentra registrado.";
         }
-        Cliente cliente = new Cliente(nombreCompleto, documento, telefono, correo, codigoCliente, porcentajeDescuento);
+        int codigoAfiliacion;
+        try {
+            codigoAfiliacion = Integer.parseInt(codigoCliente.trim());
+        } catch (NumberFormatException e) {
+            return "El código de cliente debe ser un número entero.";
+        }
+        Cliente cliente = new Cliente(documento, nombreCompleto, correo, telefono, codigoAfiliacion, porcentajeDescuento);
         listaClientes.add(cliente);
         return "Cliente registrado con éxito.";
     }
 
     // 4. Operarios
     public String registrarOperario(String nombreCompleto, String documento, String telefono, String correo, String codigoOperario, double salario) {
-        Operario operario = new Operario(nombreCompleto, documento, telefono, correo, codigoOperario, salario);
+        int codigoEmpleado;
+        try {
+            codigoEmpleado = Integer.parseInt(codigoOperario.trim());
+        } catch (NumberFormatException e) {
+            return "El código de operario debe ser un número entero.";
+        }
+        Operario operario = new Operario(documento, nombreCompleto, correo, telefono, codigoEmpleado,
+                java.time.LocalDate.now().toString(), salario);
         listaOperarios.add(operario);
         return "Operario registrado con éxito.";
     }
@@ -132,10 +153,16 @@ public class CinePlus {
     }
 
     public String registrarFuncion(String codigoFuncion, String fecha, String horaInicio, double precioEntrada, Pelicula pelicula, Sala sala) {
-        if (buscarFuncion(Integer.parseInt(codigoFuncion)) != null) {
+        int codigo;
+        try {
+            codigo = Integer.parseInt(codigoFuncion.trim());
+        } catch (NumberFormatException e) {
+            return "El código de la función debe ser un número entero.";
+        }
+        if (buscarFuncion(codigo) != null) {
             return "La función ya se encuentra registrada.";
         }
-        FuncionCinematografica funcion = new FuncionCinematografica(codigoFuncion, fecha, horaInicio, precioEntrada, pelicula, sala);
+        FuncionCinematografica funcion = new FuncionCinematografica(codigo, fecha, horaInicio, precioEntrada, pelicula, sala);
         listaFunciones.add(funcion);
         return "Función programada con éxito.";
     }
