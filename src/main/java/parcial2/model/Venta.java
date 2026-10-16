@@ -11,6 +11,14 @@ public class Venta {
     private FuncionCinematografica funcion;
     private List<Boleta> boletas;
 
+    /**
+     * Metodo constructor de venta
+     * @param codigoVenta
+     * @param fechaRealizacion
+     * @param operario
+     * @param cliente
+     * @param funcion
+     */
     public Venta(int codigoVenta, String fechaRealizacion, Operario operario, Cliente cliente, FuncionCinematografica funcion) {
         this.codigoVenta = codigoVenta;
         this.fechaRealizacion = fechaRealizacion;
@@ -19,7 +27,19 @@ public class Venta {
         this.funcion = funcion;
         this.boletas = new ArrayList<>();
     }
-
+    public double calcularTotal() {
+        double total = 0.0;
+        if (this.boletas != null) {
+            for (Boleta boleta : this.boletas) {
+                total += boleta.getValorIndividualPagado();
+            }
+        }
+        return total;
+    }
+    /**
+     * getters de venta
+     * @return
+     */
     public int getCodigoVenta() {
         return codigoVenta;
     }
