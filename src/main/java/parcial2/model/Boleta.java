@@ -24,6 +24,10 @@ public class Boleta {
     public Boleta(String codigoBoleta, FuncionCinematografica funcion, int numeroSilla) {
 
     }
+    public double calcularValorFinal() {
+        return this.valorIndividualPagado;
+    }
+
 
     /**
      * getters boleta
