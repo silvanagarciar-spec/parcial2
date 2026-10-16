@@ -2,7 +2,7 @@ package parcial2.model;
 
 public class TresD extends Sala {
 
-    public TresD(int codigoSala, String nombre, int capacidadMaximaEspectadores) {
+    public TresD(int codigoSala, int capacidadMaximaEspectadores) {
         super(codigoSala, nombre, capacidadMaximaEspectadores);
     }
 

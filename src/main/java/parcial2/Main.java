@@ -110,7 +110,7 @@ public class Main {
 
             } else if (opcion == 6) {
                 String codigoFuncion = JOptionPane.showInputDialog(null, "Ingrese el código de la función:");
-                FuncionCinematografica funcion = cinePlus.buscarFuncion(codigoFuncion);
+                FuncionCinematografica funcion = cinePlus.buscarFuncion(Integer.parseInt(codigoFuncion));
                 if (funcion != null) {
                     String codigoBoleta = JOptionPane.showInputDialog(null, "Ingrese el código de la boleta:");
                     int numeroSilla = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el número de silla:"));
@@ -133,7 +133,7 @@ public class Main {
 
             } else if (opcion == 8) {
                 String codigoBoleta = JOptionPane.showInputDialog(null, "Ingrese el código de la boleta:");
-                Boleta boleta = cinePlus.buscarBoleta(codigoBoleta);
+                Boleta boleta = cinePlus.buscarBoleta(Integer.parseInt(codigoBoleta));
                 if (boleta != null) {
                     double valorFinal = boleta.calcularValorFinal();
                     JOptionPane.showMessageDialog(null, "Código de Boleta: " + boleta.getCodigoBoleta() + "\nValor Final: $" + valorFinal);

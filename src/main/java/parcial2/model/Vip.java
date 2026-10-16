@@ -2,7 +2,7 @@ package parcial2.model;
 
 public class Vip extends Sala {
 
-    public Vip(int codigoSala, String nombre, int capacidadMaximaEspectadores) {
+    public Vip(int codigoSala, int capacidadMaximaEspectadores) {
         super(codigoSala, nombre, capacidadMaximaEspectadores);
     }
 

@@ -21,6 +21,10 @@ public class Boleta {
         this.valorIndividualPagado = valorIndividualPagado;
     }
 
+    public Boleta(String codigoBoleta, FuncionCinematografica funcion, int numeroSilla) {
+
+    }
+
     /**
      * getters boleta
      * @return

@@ -2,7 +2,7 @@ package parcial2.model;
 
     public class Tradicional extends Sala {
 
-        public Tradicional(int codigoSala, String nombre, int capacidadMaximaEspectadores) {
+        public Tradicional(int codigoSala, int capacidadMaximaEspectadores) {
             super(codigoSala, nombre, capacidadMaximaEspectadores);
         }
 

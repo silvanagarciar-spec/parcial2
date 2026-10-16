@@ -15,7 +15,7 @@ public class Pelicula {
      * @param genero
      * @param clasificacion
      */
-    public Pelicula(int codigoPelicula, String titulo, int duracionMinutos, GeneroCinematografico genero, ClasificacionEdad clasificacion) {
+    public Pelicula(int codigoPelicula, String titulo, int duracionMinutos, String genero, String clasificacion) {
         this.codigoPelicula = codigoPelicula;
         this.titulo = titulo;
         this.duracionMinutos = duracionMinutos;

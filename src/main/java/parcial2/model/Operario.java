@@ -7,15 +7,15 @@ public class Operario extends Persona {
 
     /**
      * metodo constructor de clase hija (operario)
+     *
      * @param documentoIdentidad
      * @param nombreCompleto
      * @param correoElectronico
      * @param numeroTelefono
-     * @param codigoEmpleado
      * @param fechaContratacion
      * @param salarioBasico
      */
-    public Operario(String documentoIdentidad, String nombreCompleto, String correoElectronico, String numeroTelefono, int codigoEmpleado, String fechaContratacion, double salarioBasico) {
+    public Operario(String documentoIdentidad, String nombreCompleto, String correoElectronico, String numeroTelefono, String fechaContratacion, double salarioBasico) {
         super(documentoIdentidad, nombreCompleto, correoElectronico, numeroTelefono);
         this.codigoEmpleado = codigoEmpleado;
         this.fechaContratacion = fechaContratacion;
